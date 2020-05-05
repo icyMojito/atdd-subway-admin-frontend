@@ -46,59 +46,7 @@
     </div>
     <script type="module" src="./js/AdminApp.js"></script>
     <script type="module" src="./js/modules/AdminStation.js"></script>
+    <script src="./js/modules/CoolStation.js" type="module"></script>
 
-    <script>
-      const stationAddBtn = document.querySelector("#station-add-btn");
-      stationAddBtn.addEventListener("click", addStation);
-
-      function addStation(e) {
-        e.preventDefault();
-
-        const stationName = document.getElementById("station-name");
-        const name = stationName.value;
-        const stationList = document.getElementById("station-list");
-        if (isValidStationName(name)) {
-          stationList.innerHTML += `<div class="nameLine"><div class="name"> ${name} </div></div>`;
-          stationName.value = "";
-        }
-      }
-
-      function isValidStationName(name) {
-        let errorMsg;
-
-        if (name === "") {
-          errorMsg = "역 이름을 입력하지 않았습니다!";
-        }
-        if (hasBlank(name)) {
-          errorMsg = "역 이름에 공백이 포함되어 있습니다!";
-        }
-        if (hasNumber(name)) {
-          errorMsg = "역 이름에 숫자가 포함되어 있습니다!";
-        }
-        if (hasDuplication(name)) {
-          errorMsg = "동일한 역이 존재합니다!";
-        }
-        if (errorMsg) {
-          alert(errorMsg);
-          return false;
-        }
-        return true;
-      }
-
-      function hasBlank(name) {
-        return Array.from(name).some(c => c === " ");
-      }
-
-      function hasNumber(name) {
-        return Array.from(name).some(c => !isNaN(c));
-      }
-
-      function hasDuplication(name) {
-        const names = document.getElementsByClassName("name");
-        return Array.from(names)
-                .map(nameElement => nameElement.innerText)
-                .some(_name => _name === name);
-      }
-    </script>
   </body>
 </html>

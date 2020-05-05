@@ -7,10 +7,38 @@
 }
 
 .nameLine {
+  height: 30px;
   margin: 10px;
+  box-sizing: border-box;
+  position: relative;
 }
 
-.name {
-  display: inline-block;
+.nameBox {
+  width: 90%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  text-align: center;
   color: slategrey;
+}
+
+.deleteBtnBox {
+  width: 10%;
+  height: 100%;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  text-align: center;
+}
+
+.deleteBtn {
+  color: maroon;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 2px 6px;
+}
+
+.deleteBtn:hover {
+  color: white;
+  background-color: rgba(128, 0, 0, 0.76);
 }

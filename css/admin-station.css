@@ -5,3 +5,12 @@
 #station-name {
   width: calc(100% - 61px);
 }
+
+.nameLine {
+  margin: 10px;
+}
+
+.name {
+  display: inline-block;
+  color: slategrey;
+}
